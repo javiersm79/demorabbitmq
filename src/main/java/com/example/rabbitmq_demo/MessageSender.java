@@ -13,4 +13,8 @@ public class MessageSender {
     public void send(String message) {
         rabbitTemplate.convertAndSend("testjj", message);
     }
+
+    public void sendToTopic(String message) {
+        rabbitTemplate.convertAndSend("myTopicExchange", "routing.key.test", message);
+    }
 }

@@ -16,4 +16,10 @@ public class MessageController {
         messageSender.send(message);
         return "Message sent: " + message;
     }
+
+    @GetMapping("/sendToTopic")
+    public String sendMessageToTopic(@RequestParam String message) {
+        messageSender.sendToTopic(message);
+        return "Message sent to topic: " + message;
+    }
 }
